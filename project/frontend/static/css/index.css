@@ -1,0 +1,213 @@
+.center {
+  text-align: center;
+}
+
+input[type="number"] {
+  text-align: right;
+  &::placeholder {
+    text-align: left;
+  }
+}
+.m0auto {
+  margin: 0 auto;
+}
+
+.white-text {
+  color: white;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 70; /* Specify a stack order in case you're using a different order for other elements */
+  transition: width 0.5s;
+}
+
+//fix for small screens less than 576px to keep responsiveness
+.col-sm-12 {
+  flex: 0 0 100% !important;
+}
+select {
+  height: 47px !important;
+}
+.form-control:disabled {
+  color: #9fa5ab;
+}
+.Select.is-disabled > .Select-control {
+  background-color: #e9ecef !important;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.default-cursor {
+  cursor: default !important;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown__content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 5px;
+  margin-top: 5px;
+  z-index: 999;
+  border: 1px solid #eee;
+  box-shadow: 0px 3px 16px -5px rgba(0, 0, 0, 0.47);
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      padding: 5px;
+      a {
+        text-decoration: none;
+      }
+    }
+
+    li:hover {
+      background-color: #eff5ff;
+    }
+
+    li:not(:last-child) {
+      border-bottom: 1px solid #eee;
+    }
+  }
+}
+
+.dropdown--active .dropdown__content {
+  display: block;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.loader-wrapper {
+  min-height: 25px;
+}
+
+.red-border {
+  border: 1px solid #dc3545 !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+.tall-multiselect {
+  .Select {
+    max-height: 150px;
+
+    .Select-control {
+      height: 100%;
+
+      .Select-multi-value-wrapper {
+        max-height: 150px;
+      }
+    }
+  }
+}
+
+.Select-control {
+  min-height: 48px;
+}
+
+.full-screen-modal {
+  &.modal-dialog {
+    width: calc(100vw - 50px);
+    max-width: 1400px;
+    height: calc(100vh - 150px);
+    min-height: 600px;
+
+    .modal-content {
+      height: 100%;
+    }
+  }
+}
+
+.nested-select {
+  .Select-option {
+    padding-left: 20px;
+
+    &.is-disabled {
+      padding-left: 10px;
+      color: #17a2b8;
+      font-weight: bold;
+    }
+  }
+}
+
+.ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.max-50 {
+  max-width: 50px;
+}
+
+.max-75 {
+  max-width: 75px;
+}
+
+.max-100 {
+  max-width: 100px;
+}
+
+.max-150 {
+  max-width: 150px;
+}
+
+.max-200 {
+  max-width: 200px;
+}
+
+.max-250 {
+  max-width: 250px;
+}
+
+.max-300 {
+  max-width: 300px;
+}
+
+.max-350 {
+  max-width: 350px;
+}
+
+.shadow {
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(168, 168, 168, 1) !important;
+  -moz-box-shadow: 0px 0px 6px 1px rgba(168, 168, 168, 1) !important;
+  box-shadow: 0px 0px 6px 1px rgba(168, 168, 168, 1) !important;
+}

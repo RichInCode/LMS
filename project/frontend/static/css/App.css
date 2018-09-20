@@ -1,0 +1,110 @@
+.App {
+  .asterisk {
+    margin-right: 5px;
+    color: red;
+  }
+  .company-logo {
+    height: 30px;
+    margin: 15px 10px;
+  }
+  .padding {
+    NavLink {
+      padding-right: 30px;
+    }
+  }
+  .top-left-button {
+    float: left;
+    position: relative;
+    top: -25px;
+    left: 15px;
+  }
+  .nav-username {
+    color: white;
+    font-size: 18px;
+  }
+  .initial-circle {
+    background-color: white;
+    color: #0c5460;
+    border-radius: 100%;
+    display: inline-block;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 22px;
+  }
+
+  .grow {
+    transition: all 0.2s ease-in-out;
+  }
+  .grow:hover {
+    transform: scale(1.05);
+  }
+
+  .grow-icon {
+    @extend .grow;
+  }
+  .grow-icon:hover {
+    transform: scale(1.25);
+  }
+
+  .back-button {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+  .Select-multi-value-wrapper {
+    max-height: 80px;
+    min-height: 40px;
+    overflow: auto;
+  }
+
+  .fa-info-circle {
+    color: #007bff;
+    // font-size: 12px;
+  }
+  .home-img {
+    margin: 0 auto;
+    height: 25px;
+  }
+
+  .round-red-border {
+    .Select-control {
+      border: 1px solid #dc3545 !important;
+    }
+  }
+  .helpTile {
+    background-color: #fff;
+    right: 0;
+    position: absolute;
+    box-shadow: 0 0 1em rgb(5, 9, 2);
+    z-index: 1000;
+    bottom: 0;
+    top: 76px;
+    width: 283px;
+  }
+
+  .close-btn {
+    right: 0;
+    font-size: 30px;
+    padding: 10px;
+    position: absolute;
+  }
+  .close-btn:hover {
+    cursor: pointer;
+  }
+  .helpTileHeader {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 30px;
+  }
+  .help-content {
+    padding: 20px;
+    a {
+      padding-bottom: 30px;
+      font-style: normal;
+      font-weight: 400;
+      display: block;
+      width: 100%;
+    }
+  }
+
+}
