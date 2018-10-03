@@ -49,22 +49,24 @@ class UserForm extends React.Component {
                 model="user"
                 onSubmit={(user) => this.handleSubmit(user)}
             >
+            <h1>Please Enter Lead Information Below</h1>
+              <section className="contactinfo">
+                <h2>Contact Information</h2>
                 <div className="field">
                     <label htmlFor="user.name">Name:</label>
                     <Control.text model="user.name" id="user.name" />
                 </div>
                 <div className="field">
-                    <label htmlFor="user.city">City:</label>
-                    <Control.text model="user.city" id="user.city" />
+                    <label htmlFor="user.phone">Phone:</label>
+                    <Control.text model="user.phone" id="user.phone" />
                 </div>
                 <div className="field">
-                    <label htmlFor="user.state">State/Providence:</label>
-                    <Control.text model="user.state" id="user.state" />
+                    <label htmlFor="user.email">Email:</label>
+                    <Control.text model="user.email" id="user.email" />
                 </div>
-                <div className="field">
-                    <label htmlFor="user.country">Country:</label>
-                    <Control.text model="user.country" id="user.country" />
-                </div>
+              </section>
+              <section className="businessinfo">
+                <h2>Business Information</h2>
                 <div className="field">
                     <label htmlFor="user.business">Business:</label>
                     <Control.text model="user.business" id="user.business" />
@@ -73,14 +75,22 @@ class UserForm extends React.Component {
                     <label htmlFor="user.title">Title:</label>
                     <Control.text model="user.title" id="user.title" />
                 </div>
-                    <div className="field">
-                    <label htmlFor="user.phone">Phone:</label>
-                    <Control.text model="user.phone" id="user.phone" />
+              </section>
+              <section className="locationinfo">
+                <h2>Location Information</h2>
+                <div className="field">
+                    <label htmlFor="user.country">Country:</label>
+                    <Control.text model="user.country" id="user.country" />
                 </div>
                 <div className="field">
-                    <label htmlFor="user.email">Email:</label>
-                    <Control.text model="user.email" id="user.email" />
+                    <label htmlFor="user.state">State/Providence:</label>
+                    <Control.text model="user.state" id="user.state" />
                 </div>
+                <div className="field">
+                    <label htmlFor="user.city">City:</label>
+                    <Control.text model="user.city" id="user.city" />
+                </div>
+              </section>
                 <div className="field">
                     <label htmlFor="user.message">Comments:</label>
                     <Control.textarea model="user.message" id="user.message" />
