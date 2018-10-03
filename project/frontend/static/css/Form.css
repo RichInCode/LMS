@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300);
+
+.field {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.4rem;
+  font-weight: 600;
+  color: gray;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), textarea {
+  appearance: none;
+  border: 1px solid gray;
+  font-size: 1rem;
+  padding: 0.5rem;
+  min-width: 20rem;
+  width: 100%;
+  clear: both;
+}
+
+.focus {
+  outline: 2px solid dodgerblue;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.mybutton {
+  appearance: none;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  background: dodgerblue;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mybutton:hover {
+  opacity: 0.8;
+}
+
+.secondary {
+    color: dodgerblue;
+    background: transparent;
+    border: 1px solid dodgerblue;
+    appearance: none;
+      padding: 1rem 2rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      border-radius: 3px;
+      margin-left: 10px;
+      margin-right: 10px;
+}
+.secondary:hover {
+  opacity: 0.8;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  position: relative;
+}
+
+formbody {
+  font-family: Lato, Helvetica, sans-serif;
+  padding: 1rem;
+  background-color: #3E3D3D;
+}
+
+body, html {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.formcontainer {
+  width: 500px;
+  clear: both;
+}
+
+.formcontainer input {
+  width: 100%;
+  clear: both;
+}
+
+.MyForm {
+    z-index: 0;
+    width: 100%;
+    top: 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #3E3D3D;
+    background-blend-mode: multiply;
+}
+
+.formcontainer {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    position: relative;
+    top: 25%;
+    left: 25%;
+}

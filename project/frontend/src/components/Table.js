@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import key from "weak-key";
+import '../../static/css/Table.css';
+
 const Table = ({ data }) =>
   !data.length ? (
     <p>Nothing to show</p>
   ) : (
-    <div className="column">
+    <section className="MyTable">
+    <div className="column tablecontainer">
       <h2 className="subtitle">
         Showing <strong>{data.length} items</strong>
       </h2>
@@ -24,6 +27,7 @@ const Table = ({ data }) =>
         </tbody>
       </table>
     </div>
+    </section>
   );
 Table.propTypes = {
   data: PropTypes.array.isRequired

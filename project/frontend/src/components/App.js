@@ -26,6 +26,21 @@ class App extends Component {
               />
             )}
           />
+          <Route
+            exact
+            path="/lead/entry"
+            render={props => (
+              <Form endpoint="/api/lead/"/>
+            )}
+          />
+          <Route
+            exact
+            path="/lead/view"
+            render={props => (
+              <DataProvider endpoint="/api/lead/"
+                  render={data => <Table data={data} />} />
+            )}
+          />
         </div>
       </div>
     );

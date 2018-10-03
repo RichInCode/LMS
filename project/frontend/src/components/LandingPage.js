@@ -31,25 +31,21 @@ class Landing extends React.Component {
                         </p>
                         <Button
                           className="btnlanding btn--primary inner-link btn--start"
-                          onClick={this.navigateTo.bind(this, "/manage")}
+                          onClick={this.navigateTo.bind(this, "lead/entry")}
                         >
                           <span className="btn__text">ADD LEADS</span>
+                        </Button>
+                        <Button
+                          className="btnlanding btn--primary inner-link btn--start"
+                          onClick={this.navigateTo.bind(this, "lead/view")}
+                        >
+                          <span className="btn__text">VIEW LEADS</span>
                         </Button>
                       </div>
                     </div>
                   </div>
                 </div>
               </section>
-
-              <div> className="container">
-                <div className="row">
-                  <div className="col-sm-12 col-md-12 col-lg-8 textLeft">
-                    <h3>
-                      Your Mom
-                    </h3>
-                  </div>
-                </div>
-              </div>
             </div>
         );
     }

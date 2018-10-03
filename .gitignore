@@ -1,0 +1,14 @@
+*.pyc
+**/*.pyc
+**/**/*.pyc
+**/**/**/**/*.pyc
+__pycache__
+**/__pycache__
+**/**/__pycache__
+**/**/**/__pycache__
+
+project/db.sqlite3/*
+project/leads/migrations/*
+.idea/*
+.babelrc
+node_modules/*

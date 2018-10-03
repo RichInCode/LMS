@@ -1,0 +1,25 @@
+.tablecontainer {
+  width: 500px;
+  clear: both;
+}
+
+.MyTable {
+    z-index: 0;
+    width: 100%;
+    top: 0px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #3E3D3D;
+    background-blend-mode: multiply;
+}
+
+.tablecontainer {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    position: relative;
+    margin-left: 15%;
+    width: 820px;
+    margin-right: 5%;
+}
