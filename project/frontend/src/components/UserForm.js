@@ -50,6 +50,7 @@ class UserForm extends React.Component {
                 onSubmit={(user) => this.handleSubmit(user)}
             >
             <h1>Please Enter Lead Information Below</h1>
+            <hr></hr>
               <section className="contactinfo">
                 <h2>Contact Information</h2>
                 <div className="field">
@@ -91,17 +92,21 @@ class UserForm extends React.Component {
                     <Control.text model="user.city" id="user.city" />
                 </div>
               </section>
+              <section className="extrainfo">
+                <h2>Extra Information</h2>
                 <div className="field">
                     <label htmlFor="user.message">Comments:</label>
                     <Control.textarea model="user.message" id="user.message" />
                 </div>
-
+              </section>
+              <section className="buttonsec">
                 <button className="mybutton" type="submit">
                     Save Leads
                 </button>
                 <Control.reset model="user" className="secondary">
                     Clear Values
                 </Control.reset>
+               </section>
             </Form>
           </div>
 		);
