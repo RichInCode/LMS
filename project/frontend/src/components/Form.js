@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
+import { withRouter } from "react-router-dom";
 import store from './store.js'
 import UserForm from './UserForm.js'
 import '../../static/css/Form.css';
@@ -26,4 +27,5 @@ class Form extends Component {
     );
   }
 }
-export default Form;
+
+export default withRouter(Form);

@@ -41,6 +41,12 @@ class Landing extends React.Component {
                         >
                           <span className="btn__text">VIEW LEADS</span>
                         </Button>
+                        <Button
+                          className="btnlanding btn--primary inner-link btn--start"
+                          href="bokeh/dashboard"
+                        >
+                          <span className="btn__text">VIEW DASHBOARD</span>
+                        </Button>
                       </div>
                     </div>
                   </div>

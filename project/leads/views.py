@@ -5,7 +5,72 @@ from leads.models import Lead
 from leads.serializers import LeadSerializer
 from rest_framework import generics
 
+from django.shortcuts import render_to_response, render
+from django.db.models import Count
+
+from bokeh.io import show
+from bokeh.models import LogColorMapper
+from bokeh.palettes import Viridis6 as palette
+from bokeh.plotting import figure
+from bokeh.sampledata.us_states import data as states
+from bokeh.embed import components
+
+import random
+
 
 class LeadListCreate(generics.ListCreateAPIView):
     queryset = Lead.objects.all()
     serializer_class = LeadSerializer
+
+
+def dashboard(request):
+    state_xs = [state["lons"] for state in states.values()]
+    state_ys = [state["lats"] for state in states.values()]
+
+    state_names = [state for state in states.keys()]
+    color_mapper = LogColorMapper(palette=palette)
+
+    rate_dict = {}
+    for name in state_names:
+        rate_dict[name] = 0
+
+    rate_values = Lead.objects.values('state').annotate(dcount=Count('state'))
+    for i in rate_values:
+        if i['state'] != 'New York' and i['state'] != None:
+            rate_dict[i['state']] = i['dcount']
+
+    print(rate_dict)
+
+    #rate = [float(random.randrange(1, 10)) for _ in range(0, 51)]
+    rate = list(rate_dict.values())
+
+    data=dict(
+        x=state_xs,
+        y=state_ys,
+        name=state_names,
+        rate=rate,
+    )
+    TOOLS = "pan,wheel_zoom,reset,hover,save"
+
+    p = figure(
+        title="2009", tools=TOOLS,
+        x_axis_location=None, y_axis_location=None,
+        tooltips=[
+            ("Name", "@name"), ("Count", "@rate"), ("(Long, Lat)", "($x, $y)")
+        ],
+        x_range=(-130, -60),
+        y_range=(20, 60))
+    p.grid.grid_line_color = None
+    p.hover.point_policy = "follow_mouse"
+
+    p.patches('x', 'y', source=data,
+              fill_color={'field': 'rate', 'transform': color_mapper},
+              fill_alpha=0.7,
+              line_color="white", line_width=0.5
+             )
+
+    #show(p)
+
+    script, div = components(p)
+    return render(request, 'bokeh/dashboard.html',
+                  {'the_script': script, 'the_div': div})
