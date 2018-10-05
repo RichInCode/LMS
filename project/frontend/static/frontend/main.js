@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./project/frontend/src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -3294,6 +3294,28 @@ eval("\nvar content = __webpack_require__(/*! !../../../../node_modules/css-load
 /***/ (function(module, exports) {
 
 eval("module.exports = \"static/frontend/5acdc71da15391f75359f83ba85e8e7c.jpg\";\n\n//# sourceURL=webpack:///./project/frontend/static/images/bg.jpg?");
+
+/***/ }),
+
+/***/ "./project/manage.py":
+/*!***************************!*\
+  !*** ./project/manage.py ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("throw new Error(\"Module parse failed: Unexpected character '#' (1:0)\\nYou may need an appropriate loader to handle this file type.\\n> #!/usr/bin/env python\\r\\n| import os\\r\\n| import sys\\r\");\n\n//# sourceURL=webpack:///./project/manage.py?");
+
+/***/ }),
+
+/***/ 0:
+/*!**************************************************************************************!*\
+  !*** multi ./project/frontend/src/index.js run python ./project/manage.py runserver ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("__webpack_require__(/*! C:\\Users\\petri06\\OneDrive - CA Technologies\\petri06\\django_app\\project\\frontend\\src\\index.js */\"./project/frontend/src/index.js\");\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module 'run'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module 'python'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n__webpack_require__(/*! C:\\Users\\petri06\\OneDrive - CA Technologies\\petri06\\django_app\\project\\manage.py */\"./project/manage.py\");\n!(function webpackMissingModule() { var e = new Error(\"Cannot find module 'runserver'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }());\n\n\n//# sourceURL=webpack:///multi_./project/frontend/src/index.js_run_python_./project/manage.py_runserver?");
 
 /***/ })
 
