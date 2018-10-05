@@ -10,5 +10,4 @@ __pycache__
 db.sqlite3
 leads/migrations/*
 .idea/*
-.babelrc
 node_modules/*
