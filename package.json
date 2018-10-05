@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "flush": "pipenv run python ./project/manage.py flush --no-input",
-    "e2e": "cypress open --project ./project/frontend/",
-    "dev": "webpack --mode development ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js",
-    "start": "webpack --mode development ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js run python ./project/manage.py runserver",
+    "flush": "pipenv run python ./manage.py flush --no-input",
+    "e2e": "cypress open --project ./frontend/",
+    "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
+    "start": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js run python ./manage.py runserver",
     "postinstall": "npm run dev"
   },
   "keywords": [],
