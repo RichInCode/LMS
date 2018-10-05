@@ -7,8 +7,8 @@ __pycache__
 **/**/__pycache__
 **/**/**/__pycache__
 
-project/db.sqlite3/*
-project/leads/migrations/*
+db.sqlite3
+leads/migrations/*
 .idea/*
 .babelrc
 node_modules/*
