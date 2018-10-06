@@ -11,3 +11,5 @@ db.sqlite3
 leads/migrations/*
 .idea/*
 node_modules/*
+
+frontend/static/frontend/main.js
