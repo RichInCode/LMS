@@ -9,7 +9,8 @@
     "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
     "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
     "start": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js run python ./manage.py runserver",
-    "postinstall": "npm run dev"
+    "postinstall": "npm run dev",
+    "heroku-postbuild": "webpack -p"
   },
   "keywords": [],
   "author": "",
