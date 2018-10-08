@@ -17,6 +17,8 @@ from bokeh.embed import components
 
 import random
 
+from .statemap import states_hash
+
 
 class LeadListCreate(generics.ListCreateAPIView):
     queryset = Lead.objects.all()
@@ -36,7 +38,7 @@ def dashboard(request):
 
     rate_values = Lead.objects.values('state').annotate(dcount=Count('state'))
     for i in rate_values:
-        if i['state'] != 'New York' and i['state'] != None:
+        if i['state'] != None:
             rate_dict[i['state']] = i['dcount']
 
     print(rate_dict)
