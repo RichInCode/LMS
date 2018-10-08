@@ -55,7 +55,7 @@ def dashboard(request):
     TOOLS = "pan,wheel_zoom,reset,hover,save"
 
     p = figure(
-        title="2009", tools=TOOLS,
+        title="Number of Leads in Each State", tools=TOOLS,
         x_axis_location=None, y_axis_location=None,
         tooltips=[
             ("Name", "@name"), ("Count", "@rate"), ("(Long, Lat)", "($x, $y)")
@@ -64,6 +64,7 @@ def dashboard(request):
         y_range=(20, 60))
     p.grid.grid_line_color = None
     p.hover.point_policy = "follow_mouse"
+    p.legend.location='top_right'
 
     p.patches('x', 'y', source=data,
               fill_color={'field': 'rate', 'transform': color_mapper},
