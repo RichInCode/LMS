@@ -1,7 +1,7 @@
 FROM node:8
 
-ADD package.json /app/
+ADD package.json .
 RUN npm install
-ADD . /app/
+ADD . .
 RUN npm run dev
 ADD . /app/

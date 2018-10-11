@@ -5,11 +5,8 @@
   "main": "index.js",
   "scripts": {
     "flush": "pipenv run python ./manage.py flush --no-input",
-    "e2e": "cypress open --project ./frontend/",
     "dev": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js",
-    "start": "webpack --mode development ./frontend/src/index.js --output ./frontend/static/frontend/main.js run python ./manage.py runserver",
-    "postinstall": "npm run dev"
+    "build": "webpack --mode production ./frontend/src/index.js --output ./frontend/static/frontend/main.js"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +21,6 @@
     "babel-preset-react": "^6.0.0",
     "bootstrap": "^4.1.3",
     "css-loader": "^1.0.0",
-    "cypress": "^3.1.0",
     "file-loader": "^2.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
