@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  webpack:
+    build:
+      context: .
+      dockerfile: Dockerfile.webpack
+    volumes_from:
+      - webapp:rw
+
+  webapp:
+    build:
+      context: .
+      dockerfile: Dockerfile.webapp
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
