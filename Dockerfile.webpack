@@ -1,7 +1,7 @@
 FROM node:8
 
 ADD package.json .
-RUN npm install
 ADD . .
-RUN npm run dev
-ADD . /app/
+RUN chmod +x /build-webpack.sh
+
+CMD ./build-webpack.sh
