@@ -3,5 +3,7 @@ FROM node:8
 ADD package.json .
 ADD . .
 RUN chmod +x /build-webpack.sh
+ADD ./build-webpack.sh .
 
+CMD ls
 CMD ./build-webpack.sh

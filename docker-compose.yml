@@ -12,6 +12,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.webapp
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
     ports:
