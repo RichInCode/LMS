@@ -11,9 +11,18 @@ services:
       - webapp:rw
     command: ls /app
 
+  db:
+    image: postgres:latest
+    ports:
+      - "5432"
+
   webapp:
     build:
       context: .
       dockerfile: Dockerfile.webapp
+    depends_on:
+      - db
     ports:
       - "8000:8000"
+    environment:
+      - DATABASE_URL
