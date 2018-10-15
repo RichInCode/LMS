@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import { Button } from "reactstrap";
+import { withRouter } from "react-router-dom";
 import { Control, Form, actions } from 'react-redux-form';
 import '../../static/css/Form.css';
 
@@ -20,6 +22,13 @@ class UserForm extends React.Component {
   static propTypes = {
     endpoint: PropTypes.string.isRequired
   };
+
+  navigateTo(path) {
+    if (path !== "") {
+        this.props.history.push(path);
+    }
+  }
+
   handleSubmit = e => {
   	console.log(e);
   	console.log(this.props.endpoint);
@@ -157,6 +166,14 @@ class UserForm extends React.Component {
                 <Control.reset model="user" className="secondary">
                     Clear Values
                 </Control.reset>
+              </section>
+              <section className="buttonsec2">
+                <Button className="mybutton" href='/'>
+                  Back Home
+                </Button>
+                <Button className="mybutton" href="/lead/view">
+                  View Leads
+                </Button>
                </section>
             </Form>
           </div>

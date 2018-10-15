@@ -2,13 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Experiment with Bokeh</title>
+    <title>Lead Dashboard</title>
     <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css">
     <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.css">
     <script src="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
     <script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+    <link rel="stylesheet" href="./dashboard.css">
+    <style>
+        body {
+          margin-left: 25%;
+          margin-right: 25%;
+          margin-top: 5%;
+        }
+    </style>
 </head>
-<body style="background-color: #3E3D3D;">
+<body style="background-color: #3E3D3D;" className="dashboard">
 
     {{ the_div | safe }}
 
