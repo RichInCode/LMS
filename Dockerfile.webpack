@@ -1,9 +1,5 @@
 FROM node:8
 
-ADD package.json .
-ADD . .
-RUN chmod +x /build-webpack.sh
-ADD ./build-webpack.sh .
+COPY . /app/
 
-CMD ls
-CMD ./build-webpack.sh
+CMD ["/bin/bash", "/app/build-webpack.sh"]

@@ -5,15 +5,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.webpack
+    depends_on:
+      - webapp
     volumes_from:
       - webapp:rw
+    command: ls /app
 
   webapp:
     build:
       context: .
       dockerfile: Dockerfile.webapp
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/app
     ports:
       - "8000:8000"
