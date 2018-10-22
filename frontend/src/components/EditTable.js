@@ -50,7 +50,7 @@ class EditTable extends React.Component {
   render() {
     const { data } = this.state;
     return (
-      <div className='container'>
+      <div className='container' style={{backgroundColor: "white", borderRadius: "10px"}}>
         <ReactTable
             getTdProps={(state, rowInfo, column, instance) => {
                 return {

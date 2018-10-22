@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
   </head>
-  <body>
+  <body style="background-color: #3E3D3D">
+    <div class="container">
+      <form type="get" action=".">
+          <input  id="q" type="text" name="q"  placeholder="Search..." >
+          <button id="search_submit" type="submit" >Submit</button>
+      </form>
+    </div>
+    <hr></hr>
     <div id="root"></div>
-
-    <form type="get" action="." style="margin: 0">
-        <input  id="q" type="text" name="q"  placeholder="Search..." >
-        <button id="search_submit" type="submit" >Submit</button>
-    </form>
 
     {% load static %}
     <script src="{% static "frontend/main.js" %}"></script>
