@@ -5,6 +5,8 @@ import { makeData, Logo, Tips } from "./Utils";
 // Import React Table
 import ReactTable from "react-table";
 import "react-table/react-table.css";
+import { Button } from "reactstrap";
+
 
 
 function readCookie(name) {
@@ -62,15 +64,18 @@ class EditTable extends React.Component {
                     var target_url = '/api/lead/'.concat(rowInfo.original.id);
                     var target_request = JSON.stringify(rowInfo.original);
 
+                    window.alert = function() {};
+
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function() {
                          if (this.readyState == 4 && this.status == 200) {
                              alert(this.responseText);
                          }
                     };
-                    xhttp.open("PUT", target_url, true);
+                    xhttp.open("PUT", target_url, false);
                     xhttp.setRequestHeader("Content-type", "application/json");
                     xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+                    xhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
                     xhttp.send(target_request);
 
                     // IMPORTANT! React-Table uses onClick internally to trigger
@@ -99,6 +104,36 @@ class EditTable extends React.Component {
               Header: "Email",
               accessor: "email",
               Cell: this.renderEditable
+            },
+            {
+              Header: "Phone",
+              accessor: "phone",
+              Cell: this.renderEditable
+            },
+            {
+              Header: "Title",
+              accessor: "title",
+              Cell: this.renderEditable
+            },
+            {
+              Header: "City",
+              accessor: "city",
+              Cell: this.renderEditable
+            },
+            {
+              Header: "State",
+              accessor: "state",
+              Cell: this.renderEditable
+            },
+            {
+              Header: "Country",
+              accessor: "country",
+              Cell: this.renderEditable
+            },
+            {
+              Header: "Message",
+              accessor: "message",
+              Cell: this.renderEditable
             }
           ]}
           defaultPageSize={10}
@@ -106,6 +141,14 @@ class EditTable extends React.Component {
           className="-striped -highlight"
         />
         <br />
+        <section className="buttonsec2">
+            <Button className="mybutton" href='/'>
+              Back Home
+            </Button>
+            <Button className="mybutton" href="/lead/view">
+              View Leads
+            </Button>
+       </section>
       </div>
     );
   }
