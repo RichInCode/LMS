@@ -11,7 +11,8 @@ class DataProvider extends Component {
       placeholder: "Loading..."
     };
   componentDidMount() {
-    fetch(this.props.endpoint)
+    var newpath = this.props.endpoint.concat(this.props.location.search)
+    fetch(newpath)
       .then(response => {
         if (response.status !== 200) {
           return this.setState({ placeholder: "Something went wrong" });

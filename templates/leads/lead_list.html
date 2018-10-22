@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+  </head>
+  <body>
+    <div id="root"></div>
+      <form type="get" action="manage" style="margin: 0">
+          <input  id="q" type="text" name="q"  placeholder="Search..." >
+          <button id="search_submit" type="submit" >Submit</button>
+      </form>
+
+    <table>
+        <tr>
+      {% for i in object_list %}
+        <td>{{ i.id }}</td>
+        <td>{{ i.name }}</td>
+        <td>{{ i.email }}</td>
+      {% endfor %}
+        </tr>
+    </table>
+
+  </body>
+</html>

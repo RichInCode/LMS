@@ -17,10 +17,34 @@ from bokeh.embed import components
 
 import random
 
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
+from django.views.generic import ListView
 from .statemap import states_hash
 
 
 class LeadListCreate(generics.ListCreateAPIView):
+    queryset = Lead.objects.all()
+    serializer_class = LeadSerializer
+
+
+class DBSearchListView(generics.ListCreateAPIView):
+
+    def get_queryset(self):
+        qs = Lead.objects.all()
+
+        keywords = self.request.GET.get('q')
+        if keywords:
+            query = SearchQuery(keywords)
+            vector = SearchVector('title', 'name')
+            qs = qs.annotate(search=vector).filter(search=query)
+
+        return qs
+
+    serializer_class = LeadSerializer
+
+
+class UpdateRow(generics.UpdateAPIView):
+
     queryset = Lead.objects.all()
     serializer_class = LeadSerializer
 

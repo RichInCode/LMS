@@ -7,9 +7,24 @@ import Form from "./Form";
 import Landing from './LandingPage';
 import NavBar from './NavBar';
 import '../../static/css/App.css';
-import MessageList from "./ChatBot";
+import SimpleForm from './SimpleForm';
+import EditTable from './EditTable';
 
 import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
+
+const steps = [
+  {
+    id: '0',
+    message: 'Welcome to react chatbot!',
+    trigger: '1',
+  },
+  {
+    id: '1',
+    message: 'Bye!',
+    end: true,
+  },
+]
+
 
 const DUMMY_DATA = [
   {
@@ -18,17 +33,14 @@ const DUMMY_DATA = [
   },
   {
     senderId: "janedoe",
-    text: "who'll win?"
+    text: "Brazil!"
   }
 ]
 
 class App extends Component {
   constructor(props) {
     super(props);
-    tihs.state = {
-      messages: DUMMY_DATA
-      }
-    }
+  }
   render() {
     return (
       <div>
@@ -52,25 +64,24 @@ class App extends Component {
             exact
             path="/lead/view"
             render={props => (
-              <DataProvider endpoint="/api/lead/"
+              <DataProvider endpoint="/api/lead/" location={props.location}
                   render={data => <Table data={data} />} />
             )}
           />
           <Route
             exact
             path="/lead/chatbot"
+            component={SimpleForm}
+          />
+          <Route
+            path="/lead/manage"
             render={props => (
-              <Title />
-              <MessageList messages={this.state.messages} />
-              <SendMessageForm />
+              <DataProvider endpoint="/api/search/" location={props.location}
+                render={data => <EditTable data={data} />} />
             )}
           />
         </div>
      </div>
-    )
-  }
-        </div>
-      </div>
     );
   }
 }

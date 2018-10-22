@@ -1,3 +1,6 @@
+import React, { Component } from "react";
+import '../../static/css/ChatBot.css';
+
 
 class MessageList extends React.Component {
   render() {
@@ -19,3 +22,5 @@ class MessageList extends React.Component {
     )
   }
 }
+
+export default MessageList
