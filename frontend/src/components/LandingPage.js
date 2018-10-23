@@ -3,6 +3,8 @@ import { Button } from "reactstrap";
 import { withRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../static/css/Landing.css";
+import ChatWidget from "./../chatbot/ChatWidget";
+
 
 class Landing extends React.Component {
     navigateTo(path) {
@@ -58,6 +60,7 @@ class Landing extends React.Component {
                     </div>
                   </div>
                 </div>
+                <ChatWidget />
               </section>
             </div>
         );

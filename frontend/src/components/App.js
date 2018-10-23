@@ -9,6 +9,9 @@ import NavBar from './NavBar';
 import '../../static/css/App.css';
 import SimpleForm from './SimpleForm';
 import EditTable from './EditTable';
+import ChatBot from "../chatbot/ChatBot";
+import Demo from "../chatbot/index";
+
 
 import { BrowserRouter as Router, Route, Link, withRouter } from 'react-router-dom';
 
@@ -67,11 +70,6 @@ class App extends Component {
               <DataProvider endpoint="/api/lead/" location={props.location}
                   render={data => <Table data={data} />} />
             )}
-          />
-          <Route
-            exact
-            path="/lead/chatbot"
-            component={SimpleForm}
           />
           <Route
             path="/lead/manage"
