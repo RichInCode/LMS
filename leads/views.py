@@ -1,25 +1,20 @@
-from django.shortcuts import render
-
-# Create your views here.
 from leads.models import Lead
 from leads.serializers import LeadSerializer
 from rest_framework import generics
 
 from django.shortcuts import render_to_response, render
 from django.db.models import Count
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
+from django.views.generic.base import TemplateView
+from django.http import HttpResponse
 
-from bokeh.io import show
 from bokeh.models import LogColorMapper
 from bokeh.palettes import Viridis6 as palette
 from bokeh.plotting import figure
 from bokeh.sampledata.us_states import data as states
 from bokeh.embed import components
 
-import random
-
-from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector
-from django.views.generic import ListView
-from .statemap import states_hash
+from leads.services.chatbot.messageInterpeter import message_interpreter
 
 
 class LeadListCreate(generics.ListCreateAPIView):
@@ -47,6 +42,17 @@ class UpdateRow(generics.UpdateAPIView):
 
     queryset = Lead.objects.all()
     serializer_class = LeadSerializer
+
+
+class ChatBot(TemplateView):
+
+    queryset = Lead.objects.all()
+    serializer_class = LeadSerializer
+
+    def get(self, request):
+        message = request.GET.get('q')
+        text_response = message_interpreter(message)
+        return HttpResponse(text_response)
 
 
 def dashboard(request):
