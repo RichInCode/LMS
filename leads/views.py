@@ -14,7 +14,7 @@ from bokeh.plotting import figure
 from bokeh.sampledata.us_states import data as states
 from bokeh.embed import components
 
-from leads.services.chatbot.messageInterpeter import message_interpreter
+from leads.services.chatbot.ChatMessageHandler import ChatMessageHandler
 
 
 class LeadListCreate(generics.ListCreateAPIView):
@@ -51,7 +51,8 @@ class ChatBot(TemplateView):
 
     def get(self, request):
         message = request.GET.get('q')
-        text_response = message_interpreter(message)
+        message_handler = ChatMessageHandler(message)
+        text_response = message_handler.generate_response()
         return HttpResponse(text_response)
 
 
