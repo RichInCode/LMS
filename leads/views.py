@@ -51,7 +51,7 @@ class ChatBot(TemplateView):
 
     def get(self, request):
         message = request.GET.get('q')
-        message_handler = ChatMessageHandler(message)
+        message_handler = ChatMessageHandler(message, request)
         text_response = message_handler.generate_response()
         return HttpResponse(text_response)
 
